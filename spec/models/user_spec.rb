@@ -5,10 +5,9 @@ RSpec.describe User, type: :model do
     it {should validate_presence_of :provider}
     it {should validate_presence_of :uid}
     it {should validate_presence_of :token}
-    it {should validate_presence_of :expires}
   end
   context "class methods" do
-    it "should create or update itself from oauth hash"
+    it "should create or update itself from oauth hash" do 
       auth = {
               provider: "github",
               uid: "23040094", 
@@ -18,12 +17,12 @@ RSpec.describe User, type: :model do
       User.update_or_create(auth)
       new_user = User.first
 
-    expect(new_user.provider).to eq("github")
-    expect(new_user.uid).to eq("23040094")
-    expect(new_user.email).to eq("timomitchel23@gmail.com")
-    expect(new_user.name).to eq("Jesse")
-    expect(new_user.token).to eq("abcdefg12345")
-    expect(new_user.refresh_token).to eq("12345abcdefg")
-    expect(new_user.oauth_expires_at).to eq(auth[:credentials][:expires_at])
+      expect(new_user.provider).to eq("github")
+      expect(new_user.uid).to eq("23040094")
+      expect(new_user.email).to eq("timomitchel23@gmail.com")
+      expect(new_user.name).to eq("Timothy Tyrrell")
+      expect(new_user.token).to eq("9950576d1c4753e5beb1e364d93a25a4a7e4c981")
+      expect(new_user.expires).to eq false
+    end
   end
 end
