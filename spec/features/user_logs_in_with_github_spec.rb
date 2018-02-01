@@ -6,7 +6,7 @@ def stub_omniauth
     provider: "github",
     uid: "23040094", 
     info: {"nickname"=>"timomitchel", "email"=>"timomitchel23@gmail.com", "name"=>"Timothy Tyrrell", "urls"=>{"GitHub"=>"https://github.com/timomitchel", "Blog"=>""}},
-    credentials:{"token"=>"9950576d1c4753e5beb1e364d93a25a4a7e4c981", "expires"=>false},
+    credentials:{"token"=>"e81", "expires"=>false},
   })
 end
 
